@@ -1,3 +1,4 @@
+import 'package:etsy/pages/notif.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -81,25 +82,33 @@ class Login extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                width: double.infinity,
-                height: 56,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(35)),
-                  color: Colors.black,
-                ),
-                child: const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: EdgeInsets.all(14.0),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Continue',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
+              InkWell(
+                onTap: () {
+                  final navigator = Navigator.of(context);
+                  navigator.push(
+                    MaterialPageRoute(builder: (context) => const Notif()),
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 56,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(35)),
+                    color: Colors.black,
+                  ),
+                  child: const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(14.0),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Continue',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
